@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
-
+import emailjs from '@emailjs/browser';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,11 +9,20 @@ const Contact = () => {
     phone: '',
     message: ''
   });
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    emailjs.send(
+      'service_u4lti3v' , 'template_j639f2c' ,formData,'vn61W49fI--Trg6IG'
+    ).then(()=>{
+      alert('Message sent successfully');
+      setFormData({name : '' , email : '' , phone : '' , message : ''});
+    },
+  (error) => {
+    console.error(error);
+    alert('Failed to send Message.')
+  })
   };
 
   const handleChange = (e) => {
@@ -52,24 +61,26 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                   <div>
                     <h3 className="font-medium text-gray-900">Email</h3>
-                    <p className="text-gray-600">salesgobindlugs@</p>
+                    <p className="text-gray-600">salesgobindlugs@gmail</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                   <div>
                     <h3 className="font-medium text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+91 9729372668</p>
+                    <p className="text-gray-600">+91 9253272668</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-blue-600 mt-1 mr-4" />
                   <div>
                     <h3 className="font-medium text-gray-900">Address</h3>
-                    <p className="text-gray-600">
-                      123 Industrial Avenue<br />
-                      Mumbai, Maharashtra 400001<br />
-                      India
+                    <p className="text-gray-600 capitalize">
+                    near kundan coal depot, <br />
+                    gautam nagar, street no.1, <br />
+                    rewari-123401 (haryana)<br/>
+                    India
                     </p>
                   </div>
                 </div>
@@ -78,8 +89,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-medium text-gray-900">Business Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 9:00 AM - 1:00 PM
+                      Monday - Friday: 9:00 AM - 7:00 PM<br />
+                      Saturday: 9:00 AM - 3:00 PM
                     </p>
                   </div>
                 </div>

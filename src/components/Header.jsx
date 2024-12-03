@@ -21,7 +21,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             <Cable className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">Gobind Cable</span>
+            <span className="text-xl font-bold text-gray-900">Gobind Cable Terminals</span>
           </Link>
 
           {/* Desktop Navigation */}
