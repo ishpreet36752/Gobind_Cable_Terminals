@@ -8,6 +8,7 @@ import Applications from './pages/Applications';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import useTopScroll from './hooks/useTopScroll';
+import Breadcrumbs from './components/Breadcrumbs';
 
 function App() {
   return (
