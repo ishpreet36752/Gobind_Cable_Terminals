@@ -8,28 +8,28 @@ const industries = [
     title: 'Power Distribution',
     icon: Zap,
     description: 'Reliable solutions for power transmission and distribution networks',
-    image: 'https://images.unsplash.com/photo-1609881142760-298c2e76725b?auto=format&fit=crop&w=800&q=80'
+    image: 'src/images/transmission.jpg'
   },
   {
     id: 2,
     title: 'Manufacturing',
     icon: Factory,
     description: 'Industrial-grade terminals for manufacturing equipment',
-    image: 'https://images.unsplash.com/photo-1581091226825-c6a89e7e4801?auto=format&fit=crop&w=800&q=80'
+    image: 'src/images/manufacturing.jpeg'
   },
   {
     id: 3,
     title: 'Construction',
     icon: Building2,
     description: 'Durable components for building electrical systems',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee67df11c6d0?auto=format&fit=crop&w=800&q=80'
+    image: 'src/images/copperlung1.jpg'
   },
   {
     id: 4,
     title: 'Transportation',
     icon: Truck,
     description: 'Specialized terminals for vehicles and transportation systems',
-    image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64926?auto=format&fit=crop&w=800&q=80'
+    image: 'src/images/transport.jpeg'
   }
 ];
 

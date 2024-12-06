@@ -12,7 +12,6 @@ const Header = () => {
     { title: 'About', path: '/about' },
     { title: 'Products', path: '/products' },
     { title: 'Applications', path: '/applications' },
-    { title: 'Contact', path: '/contact' },
   ];
 
   return (

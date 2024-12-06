@@ -6,10 +6,13 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Applications from './pages/Applications';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
+import useTopScroll from './hooks/useTopScroll';
 
 function App() {
   return (
     <Router>
+      <ScrollHandler/>
       <div className="min-h-screen bg-white">
         <Header />
         <main className="pt-20">
@@ -21,9 +24,15 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <Footer/>
       </div>
     </Router>
   );
 }
+
+const ScrollHandler = () => {
+  useTopScroll(); // Use the custom hook here
+  return null;
+};
 
 export default App;
