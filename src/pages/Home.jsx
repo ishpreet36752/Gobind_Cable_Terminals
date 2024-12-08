@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductSlider from '../components/ProductSlider';
 import CategoryGrid from '../components/CategoryGrid';
 import CertificationBadges from '../components/CertificationBadges';
@@ -7,6 +7,7 @@ import AnimatedCounter from '../components/AnimatedCounter';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+  const [isOpen , setIsOpen] = useState();
   return (
     <div className="relative">
       {/* Hero Slider */}
@@ -55,7 +56,8 @@ const Home = () => {
       </section>
 
       {/* Quote Button */}
-      <QuoteButton />
+      <div className=''><QuoteButton /></div>
+      
     </div>
   );
 };

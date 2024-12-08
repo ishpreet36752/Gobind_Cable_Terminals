@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Cable } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Cable } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
-    { title: 'Home', path: '/' },
-    { title: 'About', path: '/about' },
-    { title: 'Products', path: '/products' },
-    { title: 'Applications', path: '/applications' },
+    { title: "Home", path: "/" },
+    { title: "About", path: "/about" },
+    { title: "Products", path: "/products" },
+    { title: "Applications", path: "/applications" },
   ];
 
   return (
@@ -20,7 +21,9 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-2">
             <Cable className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">Gobind Cable Terminals</span>
+            <span className="text-xl font-bold text-gray-900">
+              Gobind Cable Terminals
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -30,7 +33,9 @@ const Header = () => {
                 key={item.path}
                 to={item.path}
                 className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  location.pathname === item.path ? 'text-blue-600' : 'text-gray-600'
+                  location.pathname === item.path
+                    ? "text-blue-600"
+                    : "text-gray-600"
                 }`}
               >
                 {item.title}
@@ -48,6 +53,15 @@ const Header = () => {
             >
               Contact Us
             </Link>
+
+            <a
+              href="https://wa.me/919729372668?text=Hello%20there%2C%20I%20am%20interested%20in%20your%20services!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-3xl text-green-700 hover:text-green-800 transition-colors"
+            >
+              <FaWhatsapp />
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -70,7 +84,7 @@ const Header = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t"
           >
@@ -81,8 +95,8 @@ const Header = () => {
                   to={item.path}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     location.pathname === item.path
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-600 hover:bg-gray-50'
+                      ? "bg-blue-50 text-blue-600"
+                      : "text-gray-600 hover:bg-gray-50"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
