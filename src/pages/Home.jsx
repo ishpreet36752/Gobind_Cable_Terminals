@@ -56,7 +56,7 @@ const Home = () => {
       </section>
 
       {/* Quote Button */}
-      <div className=''><QuoteButton /></div>
+      <QuoteButton />
       
     </div>
   );
