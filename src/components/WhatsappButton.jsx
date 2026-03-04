@@ -1,4 +1,3 @@
-import React from "react";
 import {motion} from "framer-motion";
 import { IoLogoWhatsapp } from "react-icons/io";
 const WhatsappButton = () => {
