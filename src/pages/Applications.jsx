@@ -1,6 +1,14 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Factory, Truck, Zap } from 'lucide-react';
+import { Building2, Factory, Truck, Zap, Radio, Train, Sun, Cog } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+import transmissionImg from '../images/transmission.jpg';
+import manufacturingImg from '../images/manufacturing.jpeg';
+import copperlung1Img from '../images/copperlung1.jpg';
+import transportImg from '../images/transport.jpeg';
+import telecomImg from '../images/telecom.jpg';
+import railwayImg from '../images/railway.jpg';
+import solarImg from '../images/solarplant.jpg';
+import powerplantImg from '../images/powerplant.jpg';
 
 const industries = [
   {
@@ -8,34 +16,67 @@ const industries = [
     title: 'Power Distribution',
     icon: Zap,
     description: 'Reliable solutions for power transmission and distribution networks',
-    image: 'src/images/transmission.jpg'
+    image: transmissionImg
   },
   {
     id: 2,
     title: 'Manufacturing',
     icon: Factory,
     description: 'Industrial-grade terminals for manufacturing equipment',
-    image: 'src/images/manufacturing.jpeg'
+    image: manufacturingImg
   },
   {
     id: 3,
     title: 'Construction',
     icon: Building2,
     description: 'Durable components for building electrical systems',
-    image: 'src/images/copperlung1.jpg'
+    image: copperlung1Img
   },
   {
     id: 4,
     title: 'Transportation',
     icon: Truck,
     description: 'Specialized terminals for vehicles and transportation systems',
-    image: 'src/images/transport.jpeg'
+    image: transportImg
+  },
+  {
+    id: 5,
+    title: 'Telecom',
+    icon: Radio,
+    description: 'High-reliability connectors for telecom infrastructure',
+    image: telecomImg
+  },
+  {
+    id: 6,
+    title: 'Railways',
+    icon: Train,
+    description: 'Heavy-duty terminals certified for rail traction systems',
+    image: railwayImg
+  },
+  {
+    id: 7,
+    title: 'Solar Energy',
+    icon: Sun,
+    description: 'Corrosion-resistant lugs for solar panel installations',
+    image: solarImg
+  },
+  {
+    id: 8,
+    title: 'Power Plants',
+    icon: Cog,
+    description: 'High-current terminals for thermal and hydro power plants',
+    image: powerplantImg
   }
 ];
 
 const Applications = () => {
   return (
     <div className="py-16">
+      <SEOHead
+        title="Industry Applications"
+        description="Gobind Cable Terminals products are used in power distribution, manufacturing, railways, telecom, solar energy, construction and more across India."
+        keywords="cable lug applications, power distribution, railway lugs, solar cable terminals, telecom lugs India"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -50,7 +91,7 @@ const Applications = () => {
         </motion.div>
 
         {/* Industry Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {industries.map((industry) => (
             <motion.div
               key={industry.id}

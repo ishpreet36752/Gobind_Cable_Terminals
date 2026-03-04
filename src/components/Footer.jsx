@@ -1,4 +1,3 @@
-import React from "react";
 import { MapPinned, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -92,7 +91,7 @@ const Footer = () => {
               Rights Reserved.
             </p>
             <p className="text-gray-300 text-sm ml-2">
-              Desinged by{" "}
+              Designed by{" "}
               <a href="https://github.com/KaranSingh36752" alt="Ishpreet">
                 Ishpreet.
               </a>

@@ -1,8 +1,8 @@
-// Import necessary libraries
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import SEOHead from "../components/SEOHead";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,6 +44,11 @@ const Contact = () => {
 
   return (
     <div className="py-16">
+      <SEOHead
+        title="Contact Us"
+        description="Contact Gobind Cable Terminals in Rewari, Haryana. Call +91 9729372668 or email salesgobindlugs@gmail.com for product enquiries and bulk orders."
+        keywords="contact Gobind Cable Terminals, cable lug enquiry, Rewari Haryana manufacturer, bulk cable lugs"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div

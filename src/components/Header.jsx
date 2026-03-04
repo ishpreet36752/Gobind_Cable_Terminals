@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Cable } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -13,6 +13,7 @@ const Header = () => {
     { title: "About", path: "/about" },
     { title: "Products", path: "/products" },
     { title: "Applications", path: "/applications" },
+    { title: "Contact", path: "/contact" },
   ];
 
   return (

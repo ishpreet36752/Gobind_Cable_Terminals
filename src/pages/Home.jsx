@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
 import ProductSlider from '../components/ProductSlider';
 import CategoryGrid from '../components/CategoryGrid';
 import CertificationBadges from '../components/CertificationBadges';
 import QuoteButton from '../components/QuoteButton';
 import AnimatedCounter from '../components/AnimatedCounter';
+import SEOHead from '../components/SEOHead';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
-  const [isOpen , setIsOpen] = useState();
   return (
     <div className="relative">
+      <SEOHead
+        title="Cable Lugs & Terminals Manufacturer | Rewari, India"
+        description="Gobind Cable Terminals – manufacturer of copper lugs, aluminium lugs, ring terminals and cable terminals in Rewari, Haryana. IS 8309 compliant. 25+ years of experience."
+        keywords="copper lugs, aluminium lugs, cable terminals, ring terminals, cable lugs manufacturer, Rewari, Haryana, IS 8309"
+      />
       {/* Hero Slider */}
       <ProductSlider />
 
@@ -52,12 +57,19 @@ const Home = () => {
             <AnimatedCounter end={20} title="Industries Served" />
             <AnimatedCounter end={25} title="Years of Excellence" />
           </div>
+          <div className="text-center mt-12">
+            <Link
+              to="/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Quote Button */}
+      {/* Catalogue Download */}
       <QuoteButton />
-      
     </div>
   );
 };
