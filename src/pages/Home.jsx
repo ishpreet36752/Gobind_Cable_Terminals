@@ -1,11 +1,15 @@
-import ProductSlider from '../components/ProductSlider';
+import Hero from '../components/Hero';
 import CategoryGrid from '../components/CategoryGrid';
 import CertificationBadges from '../components/CertificationBadges';
 import QuoteButton from '../components/QuoteButton';
-import AnimatedCounter from '../components/AnimatedCounter';
+// AnimatedCounter is now used inside Hero
 import SEOHead from '../components/SEOHead';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+
+import About from './About';
+import Applications from './Applications';
+import Contact from './Contact';
 
 const Home = () => {
   return (
@@ -15,11 +19,11 @@ const Home = () => {
         description="Gobind Cable Terminals – manufacturer of copper lugs, aluminium lugs, ring terminals and cable terminals in Rewari, Haryana. IS 8309 compliant. 25+ years of experience."
         keywords="copper lugs, aluminium lugs, cable terminals, ring terminals, cable lugs manufacturer, Rewari, Haryana, IS 8309"
       />
-      {/* Hero Slider */}
-      <ProductSlider />
+      {/* Hero Section */}
+      <Hero />
 
       {/* Quick Navigation */}
-      <section className="py-16">
+      <section >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,31 +45,19 @@ const Home = () => {
       {/* Certifications */}
       <CertificationBadges />
 
-      {/* Statistics Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Industry Leadership
-            </h2>
-            <p className="text-lg text-gray-600">
-              Setting the standard in electrical component manufacturing
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedCounter end={50} title="Product Variants" />
-            <AnimatedCounter end={20} title="Industries Served" />
-            <AnimatedCounter end={25} title="Years of Excellence" />
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              to="/contact"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
+      {/* About Section */}
+      <section id="about">
+        <About />
+      </section>
+
+      {/* Applications Section */}
+      <section id="applications">
+        <Applications />
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact">
+        <Contact />
       </section>
 
       {/* Catalogue Download */}

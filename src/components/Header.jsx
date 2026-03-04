@@ -1,59 +1,73 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Cable } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { FaWhatsapp } from "react-icons/fa";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  const navigate = useNavigate();
+
   const navItems = [
-    { title: "Home", path: "/" },
-    { title: "About", path: "/about" },
-    { title: "Products", path: "/products" },
-    { title: "Applications", path: "/applications" },
-    { title: "Contact", path: "/contact" },
+    { title: "Home", path: "home" },
+    { title: "About", path: "about" },
+    { title: "Applications", path: "applications" },
+    { title: "Contact", path: "contact" },
   ];
 
   return (
     <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <Cable className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">
-              Gobind Cable Terminals
-            </span>
-          </Link>
+          <ScrollLink
+            to="home"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => {
+              if (location.pathname !== "/") {
+                navigate("/");
+              }
+            }}
+          >
+            <Logo />
+          </ScrollLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  location.pathname === item.path
-                    ? "text-blue-600"
-                    : "text-gray-600"
-                }`}
-              >
-                {item.title}
-              </Link>
+              location.pathname === "/" ? (
+                <ScrollLink
+                  key={item.path}
+                  to={item.path}
+                  smooth={true}
+                  duration={500}
+                  offset={-80} // Adjust for fixed header height
+                  className="text-sm font-medium text-gray-600 hover:text-blue-600 cursor-pointer transition-colors"
+                >
+                  {item.title}
+                </ScrollLink>
+              ) : (
+                <RouterLink
+                  key={item.path}
+                  to={`/#${item.path}`}
+                  className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+                >
+                  {item.title}
+                </RouterLink>
+              )
             ))}
-            <Link
+            <RouterLink
               to="/products"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+              className="bg-blue-600 text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >
               Explore Products
-            </Link>
-            <Link
-              to="/contact"
-              className="border border-blue-600 text-blue-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors"
-            >
-              Contact Us
-            </Link>
+            </RouterLink>
 
             <a
               href="https://wa.me/919729372668?text=Hello%20there%2C%20I%20am%20interested%20in%20your%20services!"
@@ -91,34 +105,37 @@ const Header = () => {
           >
             <div className="px-4 py-2 space-y-1">
               {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    location.pathname === item.path
-                      ? "bg-blue-50 text-blue-600"
-                      : "text-gray-600 hover:bg-gray-50"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.title}
-                </Link>
+                location.pathname === "/" ? (
+                  <ScrollLink
+                    key={item.path}
+                    to={item.path}
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-50 cursor-pointer"
+                  >
+                    {item.title}
+                  </ScrollLink>
+                ) : (
+                  <RouterLink
+                    key={item.path}
+                    to={`/#${item.path}`}
+                    onClick={() => setIsOpen(false)}
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-50"
+                  >
+                    {item.title}
+                  </RouterLink>
+                )
               ))}
-              <div className="space-y-2 pt-4">
-                <Link
+              <div className="space-y-2 pt-4 pb-2">
+                <RouterLink
                   to="/products"
-                  className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
+                  className="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-lg text-base font-bold shadow-md hover:bg-blue-700 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   Explore Products
-                </Link>
-                <Link
-                  to="/contact"
-                  className="block w-full text-center border border-blue-600 text-blue-600 px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contact Us
-                </Link>
+                </RouterLink>
               </div>
             </div>
           </motion.div>

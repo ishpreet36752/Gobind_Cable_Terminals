@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+// Routes are now managed via hash-scroll in Home.jsx, keeping only Home and Products
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Products from "./pages/Products";
-import Applications from "./pages/Applications";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import useTopScroll from "./hooks/useTopScroll";
 import WhatsappButton from "./components/WhatsappButton";
@@ -18,10 +16,7 @@ function App() {
         <main className="pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/applications" element={<Applications />} />
-            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <div className="fixed md:hidden bottom-10 right-4 z-50 bg-white rounded-xl shadow-lg ">

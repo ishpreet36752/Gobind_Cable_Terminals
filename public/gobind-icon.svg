@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Dashed outer ring for precision aesthetic -->
+  <circle cx="60" cy="60" r="56" fill="none" stroke="rgba(19, 127, 236, 0.3)" stroke-width="4" stroke-dasharray="10 6" />
+  
+  <!-- Outer Deep Blue ring -->
+  <circle cx="60" cy="60" r="46" fill="none" stroke="#137FEC" stroke-width="14" />
+  
+  <!-- Inner Copper ring -->
+  <circle cx="60" cy="60" r="26" fill="none" stroke="#D48D5E" stroke-width="8" />
+  
+  <!-- Center Copper element -->
+  <rect x="52" y="52" width="16" height="16" rx="4" fill="#D48D5E" />
+</svg>

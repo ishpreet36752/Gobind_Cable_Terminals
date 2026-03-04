@@ -1,160 +1,93 @@
 import { motion } from 'framer-motion';
-import { Building2, Factory, Truck, Zap, Radio, Train, Sun, Cog } from 'lucide-react';
-import SEOHead from '../components/SEOHead';
 import transmissionImg from '../images/transmission.jpg';
 import manufacturingImg from '../images/manufacturing.jpeg';
-import copperlung1Img from '../images/copperlung1.jpg';
-import transportImg from '../images/transport.jpeg';
 import telecomImg from '../images/telecom.jpg';
 import railwayImg from '../images/railway.jpg';
 import solarImg from '../images/solarplant.jpg';
-import powerplantImg from '../images/powerplant.jpg';
 
-const industries = [
+const applications = [
   {
     id: 1,
     title: 'Power Distribution',
-    icon: Zap,
-    description: 'Reliable solutions for power transmission and distribution networks',
-    image: transmissionImg
+    desc: 'High-voltage terminal solutions for sub-stations and grid infrastructure.',
+    icon: 'electric_bolt',
+    image: transmissionImg,
+    colSpan: 'md:col-span-1 lg:col-span-1'
   },
   {
     id: 2,
     title: 'Manufacturing',
-    icon: Factory,
-    description: 'Industrial-grade terminals for manufacturing equipment',
-    image: manufacturingImg
+    desc: 'Rugged connectors for automated assembly lines and heavy machinery.',
+    icon: 'precision_manufacturing',
+    image: manufacturingImg,
+    colSpan: 'md:col-span-1 lg:col-span-1'
   },
   {
     id: 3,
-    title: 'Construction',
-    icon: Building2,
-    description: 'Durable components for building electrical systems',
-    image: copperlung1Img
+    title: 'Railways',
+    desc: 'Vibration-resistant terminals for rolling stock and signaling systems.',
+    icon: 'train',
+    image: railwayImg,
+    colSpan: 'md:col-span-1 lg:col-span-1'
   },
   {
     id: 4,
-    title: 'Transportation',
-    icon: Truck,
-    description: 'Specialized terminals for vehicles and transportation systems',
-    image: transportImg
+    title: 'Telecom',
+    desc: 'Precision grounding and connectivity for 5G towers and data centers.',
+    icon: 'cell_tower',
+    image: telecomImg,
+    colSpan: 'md:col-span-1 lg:col-span-1'
   },
   {
     id: 5,
-    title: 'Telecom',
-    icon: Radio,
-    description: 'High-reliability connectors for telecom infrastructure',
-    image: telecomImg
-  },
-  {
-    id: 6,
-    title: 'Railways',
-    icon: Train,
-    description: 'Heavy-duty terminals certified for rail traction systems',
-    image: railwayImg
-  },
-  {
-    id: 7,
     title: 'Solar Energy',
-    icon: Sun,
-    description: 'Corrosion-resistant lugs for solar panel installations',
-    image: solarImg
-  },
-  {
-    id: 8,
-    title: 'Power Plants',
-    icon: Cog,
-    description: 'High-current terminals for thermal and hydro power plants',
-    image: powerplantImg
+    desc: 'Weather-proof, UV-resistant components for large-scale photovoltaic installations and inverters.',
+    icon: 'solar_power',
+    image: solarImg,
+    colSpan: 'md:col-span-2 lg:col-span-2'
   }
 ];
 
 const Applications = () => {
   return (
-    <div className="py-16">
-      <SEOHead
-        title="Industry Applications"
-        description="Gobind Cable Terminals products are used in power distribution, manufacturing, railways, telecom, solar energy, construction and more across India."
-        keywords="cable lug applications, power distribution, railway lugs, solar cable terminals, telecom lugs India"
-      />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Industry Applications</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our products serve diverse industries with reliable electrical connection solutions
+    <div className="w-full flex flex-col bg-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Header Section */}
+        <div className="text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-slate-900 text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">Industry Applications</h2>
+          <p className="text-slate-600 text-lg md:text-xl font-normal leading-relaxed">
+            Trusted components for environments where failure is not an option.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Industry Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {industries.map((industry) => (
-            <motion.div
-              key={industry.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {applications.map((app, index) => (
+            <div
+              key={app.id}
+              className={`group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 ${app.colSpan}`}
             >
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={industry.image}
-                  alt={industry.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <industry.icon className="h-8 w-8 text-blue-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">{industry.title}</h3>
+              {/* Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                style={{ backgroundImage: `url(${app.image})` }}
+              ></div>
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-slate-900/10"></div>
+
+              {/* Content */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <div className="bg-white/20 backdrop-blur-md p-3 rounded-xl w-fit mb-4 border border-white/30 transform transition-transform duration-300 group-hover:-translate-y-2">
+                  <span className="material-symbols-outlined text-white text-3xl">{app.icon}</span>
                 </div>
-                <p className="text-gray-600 mb-4">{industry.description}</p>
-                <button className="text-blue-600 font-medium hover:text-blue-700">
-                  Learn More →
-                </button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Project Map */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Global Projects</h2>
-          <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg">
-            {/* Add your interactive map component here */}
-            <div className="flex items-center justify-center">
-              <p className="text-gray-500">Interactive Project Map Coming Soon</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Case Studies */}
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Success Stories</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-lg shadow-md p-6"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Case Study {index}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Success story description showcasing the impact of our solutions.
+                <h3 className="text-white text-2xl font-bold leading-tight mb-3 transform transition-transform duration-300 group-hover:-translate-y-2">{app.title}</h3>
+                <p className="text-slate-200 text-sm md:text-base opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 max-w-md">
+                  {app.desc}
                 </p>
-                <button className="text-blue-600 font-medium hover:text-blue-700">
-                  Read More →
-                </button>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

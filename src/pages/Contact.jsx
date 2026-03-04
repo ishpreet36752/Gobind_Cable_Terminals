@@ -1,14 +1,11 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import emailjs from "@emailjs/browser";
-import SEOHead from "../components/SEOHead";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    user_name: "",
+    user_company: "",
+    user_email: "",
     message: "",
   });
 
@@ -17,15 +14,15 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .send(
-        "service_u4lti3v", // Replace with your service ID
-        "template_j639f2c", // Replace with your template ID
+        "service_u4lti3v",
+        "template_j639f2c",
         formData,
-        "vn61W49fI--Trg6IG" // Replace with your public key
+        "vn61W49fI--Trg6IG"
       )
       .then(
         () => {
           alert("Message sent successfully!");
-          setFormData({ name: "", email: "", phone: "", message: "" });
+          setFormData({ user_name: "", user_company: "", user_email: "", message: "" });
         },
         (error) => {
           console.error("Error:", error);
@@ -43,196 +40,142 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-16">
-      <SEOHead
-        title="Contact Us"
-        description="Contact Gobind Cable Terminals in Rewari, Haryana. Call +91 9729372668 or email salesgobindlugs@gmail.com for product enquiries and bulk orders."
-        keywords="contact Gobind Cable Terminals, cable lug enquiry, Rewari Haryana manufacturer, bulk cable lugs"
-      />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get in touch with our team for inquiries, support, or partnership
-            opportunities.
-          </p>
-        </motion.div>
+    <div className="w-full flex flex-col bg-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="text-center mb-16">
+          <h2 className="text-slate-900 text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4">Get in Touch</h2>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">Have questions about our cable terminals or need a custom quote? Our industrial specialists are ready to assist you.</p>
+        </div>
 
-        {/* Content */}
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-8"
-          >
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Get in Touch
-              </h2>
-              <div className="space-y-6">
-                {/* Contact Details */}
-                <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-blue-600 mt-1 mr-4" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+          {/* Contact Details Side */}
+          <div className="flex flex-col space-y-10">
+            <div>
+              <h3 className="text-slate-900 text-2xl font-bold mb-8">Contact Information</h3>
+              <div className="space-y-8">
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 shrink-0">
+                    <span className="material-symbols-outlined text-2xl">call</span>
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Email</h3>
-                    <p className="text-gray-600">salesgobindlugs@gmail.com</p>
+                    <p className="text-slate-500 text-sm font-medium mb-1">Phone</p>
+                    <p className="text-slate-900 text-lg font-medium">+91 9729372668</p>
+                    <p className="text-slate-900 text-lg font-medium">+91 9253272668</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <Phone className="h-6 w-6 text-blue-600 mt-1 mr-4" />
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 shrink-0">
+                    <span className="material-symbols-outlined text-2xl">mail</span>
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 9729372668</p>
-                    <p className="text-gray-600">+91 9253272668</p>
+                    <p className="text-slate-500 text-sm font-medium mb-1">Email</p>
+                    <p className="text-slate-900 text-lg font-medium">salesgobindlugs@gmail.com</p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <MapPin className="h-6 w-6 text-blue-600 mt-1 mr-4" />
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 shrink-0">
+                    <span className="material-symbols-outlined text-2xl">location_on</span>
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">Address</h3>
-                    <p className="text-gray-600 capitalize">
-                      near kundan coal depot, <br />
-                      gautam nagar, street no.1, <br />
-                      rewari-123401 (haryana)
-                      <br />
-                      India
+                    <p className="text-slate-500 text-sm font-medium mb-1">Address</p>
+                    <p className="text-slate-900 text-lg font-medium max-w-[280px] capitalize">
+                      Near Kundan Coal Depot,<br />
+                      Gautam Nagar, Street No.1,<br />
+                      Rewari-123401 (Haryana), India
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <Clock className="h-6 w-6 text-blue-600 mt-1 mr-4" />
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 text-blue-600 shrink-0">
+                    <span className="material-symbols-outlined text-2xl">schedule</span>
+                  </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">
-                      Business Hours
-                    </h3>
-                    <p className="text-gray-600">
-                      Monday - Friday: 9:00 AM - 7:00 PM
-                      <br />
-                      Saturday: 9:00 AM - 3:00 PM
-                    </p>
+                    <p className="text-slate-500 text-sm font-medium mb-1">Business Hours</p>
+                    <p className="text-slate-900 text-lg font-medium">Mon - Fri: 9:00 AM - 7:00 PM</p>
+                    <p className="text-slate-900 text-lg font-medium">Sat: 9:00 AM - 3:00 PM</p>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="bg-white rounded-lg shadow-md p-6"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Send us a Message
-            </h2>
+            {/* Map Section merged visually */}
+            <div className="bg-gray-100 rounded-2xl overflow-hidden h-64 border border-slate-200 mt-8">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d879.0194137220777!2d76.6182199284705!3d28.204953180353243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDEyJzE3LjgiTiA3NsKwMzcnMDcuOSJF!5e0!3m2!1sen!2sin!4v1733469005489!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+          </div>
+
+          {/* Form Side */}
+          <div className="bg-white rounded-2xl shadow-md border border-slate-100 p-8 md:p-10 h-fit">
+            <h3 className="text-slate-900 text-2xl font-bold mb-8">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Name
+              <div className="flex flex-col gap-6">
+                <label className="flex flex-col flex-1">
+                  <span className="text-sm font-medium leading-normal pb-2 text-slate-700">Full Name *</span>
+                  <input
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleChange}
+                    required
+                    className="form-input flex w-full rounded-lg text-slate-900 bg-slate-50 border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 h-12 px-4 placeholder:text-slate-400 transition-colors"
+                    placeholder="John Doe"
+                    type="text"
+                  />
                 </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
               </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <label className="flex flex-col flex-1">
+                  <span className="text-sm font-medium leading-normal pb-2 text-slate-700">Email Address *</span>
+                  <input
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleChange}
+                    required
+                    className="form-input flex w-full rounded-lg text-slate-900 bg-slate-50 border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 h-12 px-4 placeholder:text-slate-400 transition-colors"
+                    placeholder="john.doe@company.com"
+                    type="email"
+                  />
                 </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                  required
-                />
+                <label className="flex flex-col flex-1">
+                  <span className="text-sm font-medium leading-normal pb-2 text-slate-700">Company Name</span>
+                  <input
+                    name="user_company"
+                    value={formData.user_company}
+                    onChange={handleChange}
+                    className="form-input flex w-full rounded-lg text-slate-900 bg-slate-50 border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 h-12 px-4 placeholder:text-slate-400 transition-colors"
+                    placeholder="Acme Corp"
+                    type="text"
+                  />
+                </label>
               </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Message
-                </label>
+              <label className="flex flex-col w-full">
+                <span className="text-sm font-medium leading-normal pb-2 text-slate-700">Message *</span>
                 <textarea
-                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                   required
-                />
-              </div>
+                  className="form-textarea flex w-full rounded-lg text-slate-900 bg-slate-50 border-slate-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 px-4 py-3 placeholder:text-slate-400 transition-colors min-h-[120px] resize-y"
+                  placeholder="How can we help you today?"
+                ></textarea>
+              </label>
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
+                className="w-full flex cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-blue-600 hover:bg-blue-700 text-white text-base font-bold transition-all shadow-md hover:shadow-lg mt-4"
               >
                 Send Message
               </button>
             </form>
-          </motion.div>
-        </div>
-
-        {/* Map Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <div className="bg-gray-100 rounded-2xl overflow-hidden h-96 border-blue-600 border-2 ">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d879.0194137220777!2d76.6182199284705!3d28.204953180353243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDEyJzE3LjgiTiA3NsKwMzcnMDcuOSJF!5e0!3m2!1sen!2sin!4v1733469005489!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{
-                position: "relative",
-                top: 0,
-                left: 0,
-                border: 0,
-              }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
