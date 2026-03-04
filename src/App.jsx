@@ -13,13 +13,13 @@ function App() {
       <ScrollHandler />
       <div className="min-h-screen bg-white">
         <Header />
-        <main className="pt-20">
+        <main className="pt-20 overflow-x-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
           </Routes>
         </main>
-        <div className="fixed md:hidden bottom-10 right-4 z-50 bg-white rounded-xl shadow-lg ">
+        <div className="fixed md:hidden bottom-6 right-4 z-50 bg-white rounded-xl shadow-lg ">
           <WhatsappButton />
         </div>
         <Footer />

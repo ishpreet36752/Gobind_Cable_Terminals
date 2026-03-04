@@ -14,7 +14,7 @@ const sliderImages = [slide1, slide2, slide3];
 
 const Hero = () => {
     return (
-        <section className="relative bg-white pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+        <section className="relative bg-white pt-8 pb-12 lg:pt-20 lg:pb-24 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Main Hero Split */}
@@ -22,35 +22,36 @@ const Hero = () => {
 
                     {/* Left Content */}
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="max-w-2xl"
+                        className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0 break-words w-full"
                     >
                         <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-medium text-sm mb-6 border border-blue-100">
                             <span className="flex h-2 w-2 rounded-full bg-blue-600 mr-2"></span>
                             Premium Manufacturing Quality
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
-                            Precision Cable Terminals for <span className="text-blue-600">High-Performance</span> Industries.
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.15] mb-6 mt-4 lg:mt-0">
+                            Precision Cable Terminals for <br className="hidden lg:block" />
+                            <span className="text-blue-600">High-Performance</span> Industries.
                         </h1>
 
-                        <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-                            IS 8309 compliant copper & aluminium lugs. Manufactured in India. Trusted by 20+ industries for over 25 years.
+                        <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                            IS 8309 compliant copper & aluminium lugs. Manufactured in India. Trusted by 20+ industries for over 45 years.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-stretch">
                             <Link
                                 to="/contact"
-                                className="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+                                className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 sm:px-8 sm:py-4 text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
                             >
                                 Request a Quote
                                 <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
                             </Link>
                             <Link
                                 to="/products"
-                                className="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-gray-700 bg-white border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 rounded-lg transition-all duration-200"
+                                className="w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 sm:px-8 sm:py-4 text-base font-semibold text-gray-700 bg-white border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 rounded-lg transition-all duration-200"
                             >
                                 View Product Catalog
                             </Link>
@@ -59,15 +60,15 @@ const Hero = () => {
 
                     {/* Right Content - Image */}
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative lg:ml-auto w-full max-w-lg lg:max-w-none"
+                        className="relative mx-auto w-full max-w-sm sm:max-w-lg lg:max-w-none lg:ml-auto"
                     >
                         {/* Decorative background shape */}
                         <div className="absolute -inset-4 md:-inset-6 bg-gradient-to-tr from-blue-100 to-blue-50 rounded-[2rem] transform rotate-3 -z-10"></div>
 
-                        <div className="relative rounded-[1.5rem] overflow-hidden shadow-2xl bg-white border border-gray-100 group h-[400px] lg:h-[500px]">
+                        <div className="relative rounded-[1.5rem] overflow-hidden shadow-2xl bg-white border border-gray-100 group h-[280px] sm:h-[400px] lg:h-[500px]">
                             <Swiper
                                 modules={[Autoplay, EffectFade]}
                                 effect="fade"
