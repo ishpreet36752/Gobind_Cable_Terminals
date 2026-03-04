@@ -46,6 +46,7 @@ const Products = () => {
         title="Products"
         description="Browse Gobind Cable Terminals' full range: copper tubular lugs, aluminium lugs, ring terminals and cable terminals. IS 8309 compliant with sizes from 1.5 mm² to 300 mm²."
         keywords="copper tubular lug, aluminium lug, ring terminal, cable terminal, IS 8309, buy cable lugs India"
+        canonicalUrl="https://gobindcable.com/products"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

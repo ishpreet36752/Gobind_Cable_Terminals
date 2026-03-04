@@ -18,6 +18,29 @@ const Home = () => {
         title="Cable Lugs & Terminals Manufacturer | Rewari, India"
         description="Gobind Cable Terminals – manufacturer of copper lugs, aluminium lugs, ring terminals and cable terminals in Rewari, Haryana. IS 8309 compliant. 25+ years of experience."
         keywords="copper lugs, aluminium lugs, cable terminals, ring terminals, cable lugs manufacturer, Rewari, Haryana, IS 8309"
+        canonicalUrl="https://gobindcable.com/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Manufacturer",
+          "name": "Gobind Cable Terminals",
+          "url": "https://gobindcable.com/",
+          "logo": "https://gobindcable.com/gobind-icon.svg",
+          "image": "https://gobindcable.com/gobind-icon.svg",
+          "description": "Manufacturer of high-quality copper & aluminium lugs, ring terminals, and cable terminals in India.",
+          "telephone": [
+            "+91-9729372668",
+            "+91-9253272668"
+          ],
+          "email": "salesgobindlugs@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Near Kundan Coal Depot, Gautam Nagar, Street No.1",
+            "addressLocality": "Rewari",
+            "addressRegion": "Haryana",
+            "postalCode": "123401",
+            "addressCountry": "IN"
+          }
+        }}
       />
       {/* Hero Section */}
       <Hero />
